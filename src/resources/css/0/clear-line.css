@@ -1,0 +1,12 @@
+﻿#clearLine {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    border: 0px solid red;
+    background-color: rgb(35,35,35);
+    height: 2px;
+        /*two are extra and not need in the VW*/
+    position: relative;
+    /*top:100px;*/
+}

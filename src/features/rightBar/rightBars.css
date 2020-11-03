@@ -1,0 +1,24 @@
+﻿
+.right-bar {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 135px;
+    top: 103px;    
+    overflow:hidden;    
+}
+
+.dock-right-bar {
+        /*No doubt there is nothing on top of the toolbar space but still 
+        some time chrome think this toolbarSpace is not on top of other layer
+        solution is just make is also as top layer as really there is nothing on it. */ 
+    z-index:17;
+    bottom:0px;    
+}
+
+.tools-right-bar {        
+    z-index:18;
+    background-color: black;  /*rgba(200,200,200,0.8)*/
+}
+
+

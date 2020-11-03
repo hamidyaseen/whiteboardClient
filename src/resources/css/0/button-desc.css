@@ -1,0 +1,20 @@
+﻿
+.underlined-btn {
+    border: none;
+    border-bottom: medium solid rgb(128, 128,128);
+    padding: 6px 0px 33px 0px;
+    margin: 0px 13px 0px 15px;
+    border-radius: 0px;
+    background-color: transparent;
+    /*font-size: large;
+    font-weight: 500;*/
+    /*color: rgb(128, 128, 128);
+    background: none;*/
+    overflow: hidden;
+    height: 41px;
+    /*line-height: 41px;*/
+}
+
+.activeborder_bottom {
+    border-bottom: medium solid white;
+}

@@ -1,0 +1,11 @@
+﻿
+.text_tool {
+    background-color: transparent;
+}
+
+.text_tool_border {
+    border: 3px solid rgb(51, 51, 51);
+}
+.activeBorder {
+    border: 3px solid white;
+}

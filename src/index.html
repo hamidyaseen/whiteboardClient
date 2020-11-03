@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app='vw'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>TypeScript HTML App</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="resources/css/0/overrideBootstap.css" rel="stylesheet" />
+    <link href="resources/css/0/app.css" rel="stylesheet" />
+
+    <link href="resources/css/0/font-desc.css" rel="stylesheet" />
+    <link href="resources/css/0/button-desc.css" rel="stylesheet" />
+    <link href="resources/css/0/clear-line.css" rel="stylesheet" />
+    <link href="resources/css/0/color-desc.css" rel="stylesheet" />
+    <link href="resources/css/0/commonDialogs.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    
+    <!--<script src="Scripts/angular.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!--<script src="Scripts/angular-animate.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-animate.min.js"></script>
+    <!--<script src="Scripts/angular-sanitize.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-sanitize.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/angularDialogService/dialogs.js"></script>
+
+    <!--<script src="Scripts/jquery.signalR-2.4.1.js"></script>-->   
+
+    <script src="app.js"></script>
+    <script src="components/appspace/appspace-controller.js"></script>
+    <!--<script src="components/dialog-controller.js"></script>-->
+    <script src="components/dialogs/dialog-controller.js"></script>
+    <!--<script src="features/sharedspace/sharedspace-controller.js"></script>-->
+
+    <link href="features/rightBar/rightBars.css" rel="stylesheet" />
+    <link href="features/sharedocument/documentToolbar.css" rel="stylesheet" />
+
+    <link href="features/whiteboardscalable/wb.css" rel="stylesheet" />
+    <link href="features/whiteboardscalable/color-tools.css" rel="stylesheet" />
+    <link href="features/whiteboardscalable/sharedtoolstyle.css" rel="stylesheet" />
+    <script src="features/wbclearconfirmation/clearConfirmation-controller.js"></script>
+    <!--<script src="features/whiteboardscalable/whiteboardserviceclient-service.js"></script>-->
+    <script src="features/vwHubClient/vwClient-Service.js"></script>
+    <script src="features/whiteboardscalable/sketchactionsdata-service.js"></script>
+
+    <script src="features/whiteboardscalable/sketchactiondraw-service.js"></script>
+    <script src="features/whiteboardscalable/sketchactionpresent-service.js"></script>
+    <script src="features/scalablewhiteboardparent/whiteboardparent-controller.js"></script>
+
+    <script src="features/whiteboardscalable/whiteboard-Directive.js"></script>
+    <script src="features/whiteboardscalable/presentingboard-directive.js"></script>
+    <script src="features/whiteboardscalable/drawingboard-directive.js"></script>
+
+    <script src="features/whiteboardscalable/drawingcolor-directive.js"></script>
+    <script src="features/whiteboardscalable/colorpallet-controller.js"></script>
+    <script src="features/whiteboardscalable/colorpallet-directive.js"></script>
+    <script src="features/whiteboardscalable/drawingtool-directive.js"></script>
+</head>
+<!---->
+<body ng-controller="vw.components.AppSpaceCtrl as appSpace">
+    <div class="top-level-container" ng-controller="vw.components.DialogsController as vwDialog">
+        <div style='display:block; height:79px; width:100%; border:5px solid green;'>
+            <div id="conferenceroom" ng-controller="vw.features.scalablewhiteboardparent.WhiteboardParent as wbParent">
+                <select ng-change="wbParent.updateChangeRoom()" ng-model="wbParent.currentRoom" ng-options="room.Name for room in wbParent.roomList" class="form-control font-desc-md vw-color-black" style="width:150px; float:right"></select>
+            </div>
+        </div>
+        <hr id="clearLine" />
+        <div id="sharedspace">
+            <white-board>
+                <drawing-tool toolname="Pencil" title="" compose="source-over" selectable passive-look="toolshape text_tool_border tool_pencil" active-look="active_eraser activeBorder"></drawing-tool>
+                <drawing-tool toolname="Eraser" title="" compose="destination-out" size=18 selectable passive-look="toolshape text_tool_border tool_eraser" active-look="active_eraser activeBorder"></drawing-tool>
+                <drawing-tool toolname="Clear" title="Clear" trigger-event passive-look="toolshape text_tool vw-color-lightgray textPositionTool text_tool_border" active-look=""></drawing-tool>
+                <drawing-tool toolname="Undo" title="Undo" trigger-event passive-look="toolshape text_tool vw-color-lightgray textPositionTool text_tool_border" active-look=""></drawing-tool>
+                <color-pallet>
+                    <drawing-color colorname="red" title="" selectable passive-look="toolshape text_tool_border color_red" active-look="color_active_red activeBorder"></drawing-color>
+                    <drawing-color colorname="green" title="" selectable passive-look="toolshape text_tool_border color_green" active-look="color_active_green activeBorder"></drawing-color>
+                    <drawing-color colorname="blue" title="" selectable passive-look="toolshape text_tool_border color_blue" active-look="color_active_blue activeBorder"></drawing-color>
+                    <drawing-color colorname="gray" title="" selectable passive-look="toolshape text_tool_border color_gray" active-look="color_active_gray activeBorder"></drawing-color>
+                    <drawing-color colorname="purple" title="" selectable passive-look="toolshape text_tool_border color_purple" active-look="color_active_purple activeBorder"></drawing-color>
+                    <drawing-color colorname="orange" title="" selectable passive-look="toolshape text_tool_border color_orange" active-look="color_active_orange activeBorder"></drawing-color>
+                    <drawing-color colorname="cyan" title="" selectable passive-look="toolshape text_tool_border color_cyan" active-look="color_active_cyan activeBorder"></drawing-color>
+                    
+                </color-pallet>
+                <canvas present-board id='wbPresentBoard' width="{{universalWidth}}" height="{{universalHeight}}" class="presentBoard"></canvas> <!--thinBorder absolutePosition-->
+                <canvas drawing-board id='wbDrawingBoard' width="{{universalWidth}}" height="{{universalHeight}}" class="drawingBoard"></canvas>
+            </white-board>
+            <div class="right-bar tools-right-bar">
+                <!-- This is VR case right hand menu -->
+                <div class="receptionMenuSpace" ng-show="menuItem.isHostOn()||menuItem.isEmbeddedHostOn()">
+                    
+                </div>
+                <div class="docToolbar">                    
+                    <button ng-repeat="color in colors" class="{{color.PassiveLook}}" ng-click="selectColor(color)" ng-class="color.isActivated() ? color.ActiveLook : ''"></button>
+                    <button ng-repeat="tool in tools" ng-show="needtoShow(tool)" class="{{tool.PassiveLook}}" ng-click="selectTool(tool)" ng-class="tool.activated ? tool.ActiveLook : ''">{{tool.inTitle}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

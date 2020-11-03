@@ -1,0 +1,23 @@
+﻿
+.modal {
+    overflow-x : hidden;   /* as default in bootstrap*/
+    overflow-y : auto;     /* as opposite to the bootstrap*/
+}
+
+.row {
+    margin-left:0px;
+    margin-right: 0px;
+}
+
+button:active {
+    outline: none;    
+}
+button:focus {
+    outline:none;
+}
+button[disabled] {
+    color: rgb(35,35,35);
+}
+span[disabled] {
+    color: rgb(35,35,35);
+}

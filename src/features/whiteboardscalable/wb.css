@@ -1,0 +1,60 @@
+﻿
+.toolshape {
+    width: 55px;
+    height: 55px;
+    margin:3px;
+    padding:0px;
+    display:inline-block;    
+    /*cursor:pointer;*/
+    overflow: hidden; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+.tool_pencil {
+    background-image: url('eraser.png');
+    background-repeat:round;
+}
+.active_pencil {    
+    background-image: url('eraser_active.png');
+    background-repeat:round;
+    border: 3px solid white;
+}
+.tool_marker {
+    background-image: url('eraser.png');
+    background-repeat:round;
+}
+.active_marker {    
+    background-image: url('eraser_active.png');
+    background-repeat:round;
+    border: 3px solid white;
+}
+
+.tool_eraser {
+    background-image: url('eraser.png');
+    background-repeat:round;
+    margin: 3px 3px 3px -1px;
+}
+.active_eraser {    
+    background-image: url('eraser_active.png');
+    background-repeat:round;
+    border: 3px solid white;
+}
+
+/*.thinBorder{
+    border: 1px solid #404040;
+}
+
+.absolutePosition {
+    position:absolute;
+    left: 0px;
+    top: 103px;
+}*/
+
+.presentBoard {
+    z-index:19;
+}
+.drawingBoard {
+    z-index:20;
+    /*cursor: url(pencil.png) 5 5, auto;*/
+}

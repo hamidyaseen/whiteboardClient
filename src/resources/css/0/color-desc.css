@@ -1,0 +1,19 @@
+﻿
+        .vw-color {
+            color: rgb(200,200,200);
+        }
+        .vw-color-lightgray {
+            color:rgb(128,128,128);
+        }
+        /*.color-lightgray {
+            color:rgb(128,128,128);
+        }*/
+        .vw-color-mediumgray {
+            color: rgb(91,91,91);
+        }
+        .vw-color-darkgray {
+            color: rgb(51,51,51);
+        }
+        .vw-color-black {
+            color: black;
+        }
